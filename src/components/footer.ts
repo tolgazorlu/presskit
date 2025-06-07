@@ -10,7 +10,7 @@ export const Footer = () => {
     <!-- End Col -->
 
     <div class="mt-3 space-y-2">
-      <p class="text-sm sm:text-base text-gray-400 dark:text-gray-500">We're part of the <a class="text-cyan-400 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-cyan-300" href="#">TEAM K6</a> family.</p>
+      <p class="text-sm sm:text-base text-gray-400 dark:text-gray-500">We're part of the <a class="text-cyan-400 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-cyan-300" href="https://www.teamk6.games/">TEAM K6</a> family.</p>
       <p class="text-sm sm:text-base text-gray-400 dark:text-gray-500">
         © 2025 TEAM K6.
       </p>

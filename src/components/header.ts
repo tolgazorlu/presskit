@@ -4,7 +4,7 @@ export function Header(): string {
         <nav class="mt-2 md:mt-4 relative max-w-4xl w-full bg-gradient-to-r from-cyan-50 via-teal-50 to-blue-100 dark:from-slate-800 dark:via-purple-900/30 dark:to-blue-900/40 backdrop-blur-lg bg-opacity-95 dark:bg-opacity-95 border border-cyan-200/60 dark:border-purple-600/40 rounded-[20px] md:rounded-[28px] mx-2 flex flex-wrap md:flex-nowrap items-center justify-between p-2 md:p-1 ps-4 md:ps-5 md:py-0 sm:mx-auto shadow-lg shadow-cyan-500/10 dark:shadow-purple-900/20">
             <div class="flex items-center min-w-0 flex-1 md:flex-none">
             <!-- Logo -->
-            <a class="flex-none rounded-md text-base md:text-lg inline-block font-bold focus:outline-hidden focus:opacity-80 text-gray-800 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 truncate" href="../templates/personal/index.html" aria-label="Team K6">
+            <a class="flex-none rounded-md text-base md:text-lg inline-block font-bold focus:outline-hidden focus:opacity-80 text-gray-800 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 truncate" href="https://www.teamk6.games/" aria-label="Team K6">
                 <span class="hidden xs:inline">TEAM K6</span>
                 <span class="xs:hidden">K6</span>
             </a>
