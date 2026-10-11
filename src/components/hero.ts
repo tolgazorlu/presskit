@@ -21,7 +21,7 @@ export function Hero(): string {
               onerror="this.style.display='none'; document.getElementById('video-fallback').style.display='block'">
             </iframe>
             <!-- Fallback for when iframe fails -->
-            <div id="video-fallback" class="w-full h-64 sm:h-80 md:h-96 bg-gradient-to-br from-blue-900 to-purple-900 rounded-lg shadow-2xl flex items-center justify-center cursor-pointer group hidden" onclick="window.open('https://www.youtube.com/watch?v=77248MsuRfo', '_blank')">
+            <div id="video-fallback" class="w-full h-64 sm:h-80 md:h-96 bg-gradient-to-br from-blue-900 to-purple-900 rounded-lg shadow-2xl flex items-center justify-center cursor-pointer group hidden" onclick="window.open('https://www.youtube.com/watch?v=77248MsuRfo', '_blank', 'noopener,noreferrer')">
               <div class="text-center p-4">
                 <div class="w-16 h-16 sm:w-20 sm:h-20 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-red-700 transition-colors">
                   <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -319,25 +319,10 @@ export async function downloadImages() {
       }
     }
 
-    // Function to load JSZip dynamically
-    const loadJSZip = (): Promise<any> => {
-      return new Promise((resolve, reject) => {
-        if ((window as any).JSZip) {
-          resolve((window as any).JSZip)
-          return
-        }
-
-        const script = document.createElement('script')
-        script.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js'
-        script.onload = () => resolve((window as any).JSZip)
-        script.onerror = reject
-        document.head.appendChild(script)
-      })
-    }
-
     // Try to use JSZip if available, otherwise fall back to individual downloads
     try {
-      const JSZip = await loadJSZip()
+      // Bundled (npm), not injected from a CDN: no third-party script runs here.
+      const { default: JSZip } = await import('jszip')
       const zip = new JSZip()
 
       // Create a folder structure in the zip
@@ -345,7 +330,7 @@ export async function downloadImages() {
 
       // Add all images to the zip
       imageBlobs.forEach(({ name, blob }) => {
-        imagesFolder.file(name, blob)
+        imagesFolder?.file(name, blob)
       })
 
       // Generate and download the zip file
@@ -395,29 +380,10 @@ export async function downloadImages() {
   }
 }
 
-// Function to download video from YouTube
-export function downloadVideo() {
-  const videoUrl = 'https://www.youtube.com/watch?v=77248MsuRfo'
-
-  // Create a modal or confirmation dialog
-  const userConfirmed = confirm(
-    'This will open a third-party YouTube downloader service. ' +
-    'Please note that downloading YouTube videos should comply with YouTube\'s Terms of Service and copyright laws. ' +
-    'Continue?'
-  )
-
-  if (userConfirmed) {
-    // Open Y2mate (popular YouTube downloader) with the video URL
-    const downloaderUrl = `https://www.y2mate.com/youtube/${encodeURIComponent(videoUrl)}`
-    window.open(downloaderUrl, '_blank')
-  }
-}
-
 // Make functions available globally
 if (typeof window !== 'undefined') {
   (window as any).downloadLogo = downloadLogo;
-  (window as any).downloadImages = downloadImages;
-  (window as any).downloadVideo = downloadVideo
+  (window as any).downloadImages = downloadImages
 }
 
 // Call this function after the Hero component is rendered to the DOM
