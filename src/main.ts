@@ -5,6 +5,7 @@ import { Hero, setupMediaGallery } from './components/hero.ts'
 // import { Screenshots } from './components/screenshots.ts'
 // import { Logos } from './components/logos.ts'
 import { Footer } from './components/footer.ts'
+import { setupAnalytics } from './analytics.ts'
 
 // ${Logos()}
 // ${Screenshots()}
@@ -18,3 +19,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 // Initialize media gallery after DOM is rendered
 setupMediaGallery()
+
+setupAnalytics()

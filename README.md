@@ -66,13 +66,25 @@ This press kit template includes everything you need:
 
 4. **Open your browser** and navigate to `http://localhost:5173`
 
-## 🔑 Firebase Configuration
+## 🔑 Analytics (optional)
 
-`index.html` initializes Firebase Analytics with a `firebaseConfig` object. The
-`apiKey` field ships as the placeholder `YOUR_GOOGLE_API_KEY`; replace it with
-your own Firebase Web API key (Firebase Console → Project Settings → General →
-Your apps) before deploying, or remove the Firebase/Analytics block entirely if
-you do not need analytics.
+Analytics is off by default. Nothing is sent to Microsoft Clarity or Firebase
+unless you set their IDs, so a fork never reports its visitors to anyone else's
+project. To turn it on, copy `.env.example` to `.env` and fill in only what you
+use:
+
+```bash
+cp .env.example .env
+```
+
+- `VITE_CLARITY_ID` loads Microsoft Clarity.
+- `VITE_FIREBASE_*` loads Firebase Analytics (needs at least the API key, app ID
+  and measurement ID).
+
+These values ship in the public JavaScript bundle. Restrict your Firebase Web
+API key to your own domain and to the Firebase APIs in Google Cloud Console →
+APIs & Services → Credentials. Clarity records sessions, so add a cookie or
+privacy notice where your visitors' law requires one.
 
 ## 🛠️ Development
 
