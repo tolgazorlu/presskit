@@ -11,6 +11,8 @@ A beautiful, responsive press kit website template for indie game developers. Cr
 
 **Presskit Studio** is a modern, open-source press kit template designed to help indie game developers create professional promotional websites for their games. Built with cutting-edge web technologies, this template provides everything you need to showcase your game professionally to press, influencers, and potential players.
 
+Built: 2025-06 (single development sprint). Status: stable template, not under active feature development.
+
 ### Why Presskit Studio?
 
 - **Completely Free** - No licensing fees, no subscriptions
@@ -45,7 +47,7 @@ This press kit template includes everything you need:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/tolgazorlu/presskit.git
-   cd presskit-studio
+   cd presskit
    ```
 
 2. **Install dependencies**
