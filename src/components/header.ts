@@ -17,7 +17,7 @@ export function Header(): string {
 
             <div class="flex items-center gap-1 md:order-4 md:ms-4">
             <!-- Download button - responsive sizing -->
-            <a class="hidden sm:inline-flex w-full sm:w-auto whitespace-nowrap py-2 md:py-2.5 px-3 md:px-4 inline-flex justify-center items-center gap-x-2 text-xs md:text-sm font-medium rounded-full border border-gray-300/50 dark:border-gray-600/50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400/60 dark:hover:border-gray-500/60 hover:text-gray-800 dark:hover:text-gray-100 focus:outline-hidden focus:bg-gray-50 dark:focus:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 shadow-sm" href="https://github.com/tolgazorlu/presskit" target="_blank">
+            <a class="hidden sm:inline-flex w-full sm:w-auto whitespace-nowrap py-2 md:py-2.5 px-3 md:px-4 inline-flex justify-center items-center gap-x-2 text-xs md:text-sm font-medium rounded-full border border-gray-300/50 dark:border-gray-600/50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400/60 dark:hover:border-gray-500/60 hover:text-gray-800 dark:hover:text-gray-100 focus:outline-hidden focus:bg-gray-50 dark:focus:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 shadow-sm" href="https://github.com/tolgazorlu/presskit" target="_blank" rel="noopener noreferrer">
                 <span class="hidden md:inline">Download Press Kit Template</span>
                 <span class="md:hidden">Download</span>
             </a>
