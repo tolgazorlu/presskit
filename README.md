@@ -64,6 +64,14 @@ This press kit template includes everything you need:
 
 4. **Open your browser** and navigate to `http://localhost:5173`
 
+## 🔑 Firebase Configuration
+
+`index.html` initializes Firebase Analytics with a `firebaseConfig` object. The
+`apiKey` field ships as the placeholder `YOUR_GOOGLE_API_KEY`; replace it with
+your own Firebase Web API key (Firebase Console → Project Settings → General →
+Your apps) before deploying, or remove the Firebase/Analytics block entirely if
+you do not need analytics.
+
 ## 🛠️ Development
 
 ### Available Scripts
